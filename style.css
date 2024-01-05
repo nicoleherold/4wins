@@ -1,0 +1,77 @@
+
+
+
+.main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.board {
+    width: 370px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: PowderBlue;
+}
+
+.square{
+ width: 50px;
+ height: 50px;
+ border: solid 0.5px black;
+ background: PowderBlue;
+ border-radius: 50%;
+}
+
+
+.buttons button {
+width: 52px;
+border: solid 1px black;
+margin-bottom: 10px;
+
+}
+
+.red{
+    width: 50px;
+    height: 50px;
+     border: solid 1px black;
+    background: red;
+    border-radius: 50%;
+}
+
+.yellow{
+    width: 50px;
+    height: 50px;
+     border: solid 1px black;
+    background: yellow;
+    border-radius: 50%;
+}
+
+.output{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+button:hover{
+    background: blueviolet;
+}
