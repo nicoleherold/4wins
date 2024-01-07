@@ -1,6 +1,6 @@
 for (i = 0; i<7; i++){
     var button = document.createElement('button');
-    button.innerHTML = '<span class="material-symbols-rounded"> arrow_circle_down</span>';
+    button.innerHTML = '<span class="material-symbols-outlined"> arrow_downward</span>';
     button.setAttribute("onclick", "insert("+i+")");
     button.setAttribute("id", (i));
 
