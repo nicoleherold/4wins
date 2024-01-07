@@ -65,13 +65,16 @@ function checkEnd(){
             werGewinnt.innerHTML = ("verloren");
             console.log(winCoordinates);
             output.append(werGewinnt);
-            for (let element of winCoordinates) {
-                var id =element[0]+ "" + element[1]
-                console.log(id)
-                var winningStone = document.getElementById(id);
-                winningStone.classList.remove('yellow');
-                winningStone.classList.add('winnerYellow');  
-            }
+            /* setTimeout only for yellow stone, due these have a timedelay of 1 second to appear. */
+            setTimeout(function() {
+                for (let element of winCoordinates) {
+                    var id =element[0]+ "" + element[1]
+                    console.log(id)
+                    var winningStone = document.getElementById(id);
+                    winningStone.classList.remove('yellow');
+                    winningStone.classList.add('winnerYellow');  
+                }   
+            }, 1000);
         } 
 
     }
