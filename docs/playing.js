@@ -39,46 +39,48 @@ function checkEnd(){
     var ergebnis = evaluation();
     console.log(ergebnis);
     if (ergebnis!= -1){
-        var allButtons = document.querySelector('.buttons');
-        allButtons.style.visibility = 'hidden';
-        var output = document.querySelector('.output');
-        output.innerHTML = ("SPIEL zu ENDE!!!!")
-        var output = document.querySelector('.output');
-        var werGewinnt = document.createElement('p');
-        if (ergebnis== 1){
-            werGewinnt.innerHTML = ("unentscheiden")
-            output.append(werGewinnt);
-        } 
-        if (ergebnis== 2){
-            werGewinnt.innerHTML = ("gewonnen");
-            console.log(winCoordinates);
-            output.append(werGewinnt);
-            for (let element of winCoordinates) {
-                var id =element[0]+ "" + element[1]
-                console.log(id)
-                var winningStone = document.getElementById(id);
-                winningStone.classList.remove('red');
-                winningStone.classList.add('winnerRed');  
-            }
-        } 
-        if (ergebnis== 0){
-            werGewinnt.innerHTML = ("verloren");
-            console.log(winCoordinates);
-            output.append(werGewinnt);
-            /* setTimeout only for yellow stone, due these have a timedelay of 1 second to appear. */
-            setTimeout(function() {
-                for (let element of winCoordinates) {
-                    var id =element[0]+ "" + element[1]
-                    console.log(id)
-                    var winningStone = document.getElementById(id);
-                    winningStone.classList.remove('yellow');
-                    winningStone.classList.add('winnerYellow');  
-                }   
-            }, 2000);
-        } 
-
+        setTimeout(function() {
+            var allButtons = document.querySelector('.buttons');
+            allButtons.style.visibility = 'hidden';
+            var output = document.querySelector('.output');
+            output.innerHTML = ("SPIEL zu ENDE!!!!")
+            var output = document.querySelector('.output');
+            var werGewinnt = document.createElement('p');
+            if (ergebnis== 1){
+                werGewinnt.innerHTML = ("unentscheiden")
+                output.append(werGewinnt);
+            } 
+            if (ergebnis== 2){
+                
+                    werGewinnt.innerHTML = ("gewonnen");
+                    console.log(winCoordinates);
+                    output.append(werGewinnt);
+                    for (let element of winCoordinates) {
+                        var id =element[0]+ "" + element[1]
+                        console.log(id)
+                        var winningStone = document.getElementById(id);
+                        winningStone.classList.remove('red');
+                        winningStone.classList.add('winnerRed');  
+                    }
+            
+            } 
+            if (ergebnis== 0){
+                setTimeout(function() {
+                    werGewinnt.innerHTML = ("verloren");
+                    console.log(winCoordinates);
+                    output.append(werGewinnt);
+                    /* setTimeout only for yellow stone, due these have a timedelay of 1 second to appear. */
+                    for (let element of winCoordinates) {
+                        var id =element[0]+ "" + element[1]
+                        console.log(id)
+                        var winningStone = document.getElementById(id);
+                        winningStone.classList.remove('yellow');
+                        winningStone.classList.add('winnerYellow');  
+                    }   
+                }, 1000);
+            } 
+        }, 1000); 
     }
-
 }
 
 var buttons = document.querySelector('.buttons');

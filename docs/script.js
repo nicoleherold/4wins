@@ -55,7 +55,7 @@ function evaluation(){
                 winCoordinates = [[x,y],[x+1,y],[x+2,y],[x+3,y]];
                 return 0
             }
-            if (gameBoard[x+0][y]==2 && gameBoard[x+1][y]==2 && gameBoard[x+2][y]==2 && gameBoard[x+3][y]==2){$
+            if (gameBoard[x+0][y]==2 && gameBoard[x+1][y]==2 && gameBoard[x+2][y]==2 && gameBoard[x+3][y]==2){
                 winCoordinates =[[x,y],[x+1,y],[x+2,y],[x+3,y]];
                 return 2
             }
