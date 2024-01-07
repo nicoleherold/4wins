@@ -31,6 +31,8 @@ function insert(y){
 }
 
 
+askLevel();
+
 
 
 function checkEnd(){
@@ -48,31 +50,81 @@ function checkEnd(){
             output.append(werGewinnt);
         } 
         if (ergebnis== 2){
-            werGewinnt.innerHTML = ("gewonnen")
+            werGewinnt.innerHTML = ("gewonnen");
+            console.log(winCoordinates);
             output.append(werGewinnt);
+            for (let element of winCoordinates) {
+                var id =element[0]+ "" + element[1]
+                console.log(id)
+                var winningStone = document.getElementById(id);
+                winningStone.classList.remove('red');
+                winningStone.classList.add('winnerRed');  
+            }
         } 
         if (ergebnis== 0){
-            werGewinnt.innerHTML = ("verloren")
+            werGewinnt.innerHTML = ("verloren");
+            console.log(winCoordinates);
             output.append(werGewinnt);
+            for (let element of winCoordinates) {
+                var id =element[0]+ "" + element[1]
+                console.log(id)
+                var winningStone = document.getElementById(id);
+                winningStone.classList.remove('yellow');
+                winningStone.classList.add('winnerYellow');  
+            }
         } 
 
     }
 
 }
 
+var buttons = document.querySelector('.buttons');
+var board = document.querySelector('.board');
 
 
-/*
-function getInput(){
-    var input = document.querySelector('.input');
-    var form = document.createElement('form');
-    var label = document.createElement('label');
-    var inputfield = document.createElement('input');
-    inputfield.innerHTML = "welche spalte: ";
-    inputfield.setAttribute("type", "number");
-    input.appendChild(inputfield);
 
+function askLevel(){
+    var level = document.querySelector('.level');
+    var selectButtonEasy = document.createElement('button');
+    selectButtonEasy.id = 'selectButtonEasy';
+    var selectButtonMiddle = document.createElement('button');
+    selectButtonMiddle.id = 'selectButtonMiddle';
+    var selectButtonHard = document.createElement('button');
+    selectButtonHard.id = 'selectButtonHard';
+    var instruction = document.createElement('div');  
+    instruction.id = 'instruction';
+    instruction.textContent = 'Wähle dein Level';
+    selectButtonEasy.innerHTML = 'leicht';
+    selectButtonEasy.addEventListener('click', function() { onButtonClick(1); });   
+    selectButtonMiddle.innerHTML = 'mittel';
+    selectButtonMiddle.addEventListener('click', function() { onButtonClick(3); });
+    selectButtonHard.innerHTML = 'schwer';
+    selectButtonHard.addEventListener('click', function() { onButtonClick(5); });
+    level.appendChild(instruction);
+    level.appendChild(selectButtonEasy);
+    level.appendChild(selectButtonMiddle);
+    level.appendChild(selectButtonHard);
 
 
 }
-*/
+
+
+function onButtonClick(deep) {
+    console.log("Button Wert:", deep);
+    maximaleTiefe = deep;
+    console.log("maximaleTiefe:", maximaleTiefe);
+    buttons.style.visibility = 'visible';
+    board.style.visibility = 'visible'; 
+    /* make all buttons invisible     */
+    var selectButtonEasy = document.querySelector('#selectButtonEasy');
+    selectButtonEasy.style.visibility = 'hidden';
+    var selectButtonMiddle = document.querySelector('#selectButtonMiddle');
+    selectButtonMiddle.style.visibility = 'hidden';
+    var selectButtonHard = document.querySelector('#selectButtonHard');
+    selectButtonHard.style.visibility = 'hidden';
+    var instruction = document.querySelector('#instruction');
+    var info = ''
+    /* Ausgabe des Schwierigkeitsgrades*/
+    deep===1 ? info = 'Leicht' : (deep===3 ? info = 'Mittel' : info = 'Schwer');
+    instruction.textContent = info;
+}

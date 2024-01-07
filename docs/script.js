@@ -1,4 +1,6 @@
+var maximaleTiefe = 1;
 
+var winCoordinates = [[],[],[],[]];
 
 var u = '-';
 
@@ -19,8 +21,6 @@ var values= [[0.03, 0.04, 0.05, 0.07, 0.05, 0.04, 0.03],
 
 
 var minimumY = 0;
-
-var maximaleTiefe = 5;
 
 function output() {
     for (var x = 0; x < 6; x++) {
@@ -52,9 +52,11 @@ function evaluation(){
     for (var x = 0; x < 3; x++) {
         for (var y = 0; y < 7; y++) {
             if (gameBoard[x+0][y]==0 && gameBoard[x+1][y]==0 && gameBoard[x+2][y]==0 && gameBoard[x+3][y]==0){
+                winCoordinates = [[x,y],[x+1,y],[x+2,y],[x+3,y]];
                 return 0
             }
-            if (gameBoard[x+0][y]==2 && gameBoard[x+1][y]==2 && gameBoard[x+2][y]==2 && gameBoard[x+3][y]==2){
+            if (gameBoard[x+0][y]==2 && gameBoard[x+1][y]==2 && gameBoard[x+2][y]==2 && gameBoard[x+3][y]==2){$
+                winCoordinates =[[x,y],[x+1,y],[x+2,y],[x+3,y]];
                 return 2
             }
         }
@@ -63,9 +65,11 @@ function evaluation(){
     for (var x = 0; x < 6; x++) {
         for (var y = 0; y < 4; y++) {
             if (gameBoard[x][y+0]==0 && gameBoard[x][y+1]==0 && gameBoard[x][y+2]==0 && gameBoard[x][y+3]==0){
+                winCoordinates =[[x,y],[x,y+1],[x,y+2],[x,y+3]];
                 return 0
             }
             if (gameBoard[x][y+0]==2 && gameBoard[x][y+1]==2 && gameBoard[x][y+2]==2 && gameBoard[x][y+3]==2){
+                winCoordinates =[[x,y],[x,y+1],[x,y+2],[x,y+3]];
                 return 2
             }
         }
@@ -74,9 +78,11 @@ function evaluation(){
     for (var x = 0; x < 3; x++) {
         for (var y = 0; y < 4; y++) {
             if (gameBoard[x+0][y+0]==0 && gameBoard[x+1][y+1]==0 && gameBoard[x+2][y+2]==0 && gameBoard[x+3][y+3]==0){
+                winCoordinates =[[x,y],[x+1,y+1],[x+2,y+2],[x+3,y+3]];
                 return 0
             }
             if (gameBoard[x+0][y+0]==2 && gameBoard[x+1][y+1]==2 && gameBoard[x+2][y+2]==2 && gameBoard[x+3][y+3]==2){
+                winCoordinates =[[x,y],[x+1,y+1],[x+2,y+2],[x+3,y+3]];
                 return 2
             }
         }
@@ -85,9 +91,11 @@ function evaluation(){
     for (var x = 3; x < 6; x++) {
         for (var y = 0; y < 4; y++) {
             if (gameBoard[x-0][y+0]==0 && gameBoard[x-1][y+1]==0 && gameBoard[x-2][y+2]==0 && gameBoard[x-3][y+3]==0){
+                winCoordinates =[[x,y],[x-1,y+1],[x-2,y+2],[x-3,y+3]];
                 return 0
             }
             if (gameBoard[x-0][y+0]==2 && gameBoard[x-1][y+1]==2 && gameBoard[x-2][y+2]==2 && gameBoard[x-3][y+3]==2){
+                winCoordinates =[[x,y],[x-1,y+1],[x-2,y+2],[x-3,y+3]];
                 return 2
             }
         }
@@ -226,9 +234,11 @@ function play(){
         console.log("Spiel beendet");
         if (evaluation() == 2){
             console.log("Du hast gewonnen");
+            console.log("winCor: ", winCoordinates);
         }
         if (evaluation() == 0){
             console.log("Du hast verloren");
+            console.log("winCor: ", winCoordinates);
         }
         if (evaluation() == 1){
             console.log("unentschieden");
@@ -314,6 +324,7 @@ for (let y = 0; y < 7; y++) {
 }
 }
 
+/*
 function checkEnd(){
     var ergebnis = evaluation();
     console.log(ergebnis);
@@ -338,7 +349,8 @@ function checkEnd(){
         } 
 
     }
+    
 
 }
-
+*/
 
