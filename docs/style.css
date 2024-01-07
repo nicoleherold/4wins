@@ -31,9 +31,9 @@
 
 #selectButtonEasy, #selectButtonMiddle, #selectButtonHard {
     padding: 10px 20px; 
-    background-color: #121212; 
+    background: #288ecf;
     color: white; 
-    border: none; 
+    border: solid 1px black; 
     text-align: center; 
     text-decoration: none; 
     display: inline-block; 
@@ -71,9 +71,16 @@
 }
 
 .buttons button {
-width: 52px;
-border: solid 1px black;
-margin-bottom: 10px;
+ width: 52px;
+ height: 52px;
+ background-color: orange;
+ outline: none;
+ border: none;
+ border-radius: 50%;
+ font-size: 36px;
+
+/*border: solid 1px black;*/ 
+/*margin-bottom: 10px;*/
 
 }
 
@@ -97,7 +104,7 @@ margin-bottom: 10px;
     width: 50px;
     height: 50px;
     border: solid 1px black;
-    background: #cf2c28;
+    background: #af2824;
     border-radius: 50%;
 }
 
@@ -105,7 +112,7 @@ margin-bottom: 10px;
     width: 50px;
     height: 50px;
     border: solid 1px black;
-    background: #d7be1b;
+    background: #c9b21c;
     border-radius: 50%;
 }
 
@@ -121,7 +128,7 @@ margin-bottom: 10px;
 
 }
 
-
+/*
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -129,6 +136,19 @@ margin-bottom: 10px;
   'GRAD' 0,
   'opsz' 48
 }
+*/
+.material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24
+  }
+
+  .material-symbols-rounded {
+    font-size: 36px !important;
+
+  }
 
 /*
 button:hover{
