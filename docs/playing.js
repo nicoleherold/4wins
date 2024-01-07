@@ -74,7 +74,7 @@ function checkEnd(){
                     winningStone.classList.remove('yellow');
                     winningStone.classList.add('winnerYellow');  
                 }   
-            }, 1000);
+            }, 2000);
         } 
 
     }
