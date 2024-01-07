@@ -122,11 +122,14 @@ function onButtonClick(deep) {
     board.style.visibility = 'visible'; 
     /* make all buttons invisible     */
     var selectButtonEasy = document.querySelector('#selectButtonEasy');
-    selectButtonEasy.style.visibility = 'hidden';
+    // selectButtonEasy.style.visibility = 'hidden';
+    selectButtonEasy.remove();
     var selectButtonMiddle = document.querySelector('#selectButtonMiddle');
-    selectButtonMiddle.style.visibility = 'hidden';
+    // selectButtonMiddle.style.visibility = 'hidden';
+    selectButtonMiddle.remove();
     var selectButtonHard = document.querySelector('#selectButtonHard');
-    selectButtonHard.style.visibility = 'hidden';
+    // selectButtonHard.style.visibility = 'hidden';
+    selectButtonHard.remove();
     var instruction = document.querySelector('#instruction');
     var info = ''
     /* Ausgabe des Schwierigkeitsgrades*/
