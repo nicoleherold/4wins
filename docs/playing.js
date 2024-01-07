@@ -1,6 +1,6 @@
 for (i = 0; i<7; i++){
     var button = document.createElement('button');
-    button.innerHTML = '<span class="material-symbols-outlined"> arrow_downward</span>';
+    button.innerHTML = '<span class="material-symbols-rounded"> arrow_circle_down</span>';
     button.setAttribute("onclick", "insert("+i+")");
     button.setAttribute("id", (i));
 
@@ -98,7 +98,7 @@ function askLevel(){
     selectButtonHard.id = 'selectButtonHard';
     var instruction = document.createElement('div');  
     instruction.id = 'instruction';
-    instruction.textContent = 'Wähle dein Level';
+    instruction.innerHTML = '<p id="headline">Spiele 4 gewinnt!</p> <p id="subline"> Wähle dein Level</p>';
     selectButtonEasy.innerHTML = 'leicht';
     selectButtonEasy.addEventListener('click', function() { onButtonClick(1); });   
     selectButtonMiddle.innerHTML = 'mittel';

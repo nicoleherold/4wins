@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    background: orange;
 }
 .level{
   display: flex;
@@ -16,14 +16,45 @@
   justify-content: center;
 }
 
+#instruction{
+    color: #121212; 
+    font-family: Arial;
+    font-size: 16px; 
+    text-align: center;
+}
+
+#headline{
+    font-size: 36px; 
+}
+
+
+
+#selectButtonEasy, #selectButtonMiddle, #selectButtonHard {
+    padding: 10px 20px; 
+    background-color: #121212; 
+    color: white; 
+    border: none; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+
 .board {
     width: 370px;
     height: 330px;
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    background: PowderBlue;
+    background: #288ecf;
     visibility: hidden;
 }
 
@@ -31,7 +62,7 @@
  width: 50px;
  height: 50px;
  border: solid 1px black;
- background: PowderBlue;
+ background: #288ecf;
  border-radius: 50%;
 }
 
@@ -50,7 +81,7 @@ margin-bottom: 10px;
     width: 50px;
     height: 50px;
      border: solid 1px black;
-    background: red;
+    background: #ff3833;
     border-radius: 50%;
 }
 
@@ -58,7 +89,7 @@ margin-bottom: 10px;
     width: 50px;
     height: 50px;
     border: solid 1px black;
-    background: yellow;
+    background: #f7da21;
     border-radius: 50%;
 }
 
@@ -66,7 +97,7 @@ margin-bottom: 10px;
     width: 50px;
     height: 50px;
     border: solid 1px black;
-    background: rgb(171, 8, 68);
+    background: #cf2c28;
     border-radius: 50%;
 }
 
@@ -74,7 +105,7 @@ margin-bottom: 10px;
     width: 50px;
     height: 50px;
     border: solid 1px black;
-    background: rgb(207, 187, 8);
+    background: #d7be1b;
     border-radius: 50%;
 }
 
@@ -86,6 +117,8 @@ margin-bottom: 10px;
     font-size: 22px;
     text-align: center;
     padding-top: 10px;
+    height: 100px;
+
 }
 
 
@@ -97,6 +130,8 @@ margin-bottom: 10px;
   'opsz' 48
 }
 
+/*
 button:hover{
     background: blueviolet;
 }
+*/
