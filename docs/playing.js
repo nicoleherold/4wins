@@ -43,7 +43,7 @@ function checkEnd(){
             var allButtons = document.querySelector('.buttons');
             allButtons.style.visibility = 'hidden';
             var output = document.querySelector('.output');
-            output.innerHTML = ("SPIEL zu ENDE!!!!")
+            output.innerHTML = ("Das Spiel ist zu Ende")
             var output = document.querySelector('.output');
             var werGewinnt = document.createElement('p');
             if (ergebnis== 1){
@@ -52,7 +52,7 @@ function checkEnd(){
             } 
             if (ergebnis== 2){
                 
-                    werGewinnt.innerHTML = ("gewonnen");
+                    werGewinnt.innerHTML = ("<b>Du hast gewonnen</b>");
                     console.log(winCoordinates);
                     output.append(werGewinnt);
                     for (let element of winCoordinates) {
@@ -66,7 +66,7 @@ function checkEnd(){
             } 
             if (ergebnis== 0){
                 setTimeout(function() {
-                    werGewinnt.innerHTML = ("verloren");
+                    werGewinnt.innerHTML = ("<b>Du hast verloren</b>");
                     console.log(winCoordinates);
                     output.append(werGewinnt);
                     /* setTimeout only for yellow stone, due these have a timedelay of 1 second to appear. */
@@ -130,6 +130,6 @@ function onButtonClick(deep) {
     var instruction = document.querySelector('#instruction');
     var info = ''
     /* Ausgabe des Schwierigkeitsgrades*/
-    deep===1 ? info = 'Leicht' : (deep===3 ? info = 'Mittel' : info = 'Schwer');
-    instruction.textContent = info;
+    deep===1 ? info = '<b>Level: </b>Leicht' : (deep===3 ? info = '<b>Level: </b>Mittel' : info = '<b>Level: </b>Schwer');
+    instruction.innerHTML = info;
 }
