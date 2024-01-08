@@ -31,6 +31,14 @@ function insert(y){
 }
 
 
+// Um reload Link zu sezten
+var reloadLink = document.querySelector('.reload');
+var reload = document.createElement('a');
+reload.innerHTML = '<span class="material-symbols-outlined">arrow_left_alt</span>Back';
+reload.setAttribute('href', 'javascript:location.reload()');
+reloadLink.appendChild(reload);
+
+// Level auswählen
 askLevel();
 
 
@@ -47,7 +55,7 @@ function checkEnd(){
             var output = document.querySelector('.output');
             var werGewinnt = document.createElement('p');
             if (ergebnis== 1){
-                werGewinnt.innerHTML = ("unentscheiden")
+                werGewinnt.innerHTML = ("<b>unentscheiden</b>")
                 output.append(werGewinnt);
             } 
             if (ergebnis== 2){
@@ -122,17 +130,15 @@ function onButtonClick(deep) {
     board.style.visibility = 'visible'; 
     /* make all buttons invisible     */
     var selectButtonEasy = document.querySelector('#selectButtonEasy');
-    // selectButtonEasy.style.visibility = 'hidden';
     selectButtonEasy.remove();
     var selectButtonMiddle = document.querySelector('#selectButtonMiddle');
-    // selectButtonMiddle.style.visibility = 'hidden';
     selectButtonMiddle.remove();
     var selectButtonHard = document.querySelector('#selectButtonHard');
-    // selectButtonHard.style.visibility = 'hidden';
     selectButtonHard.remove();
     var instruction = document.querySelector('#instruction');
     var info = ''
     /* Ausgabe des Schwierigkeitsgrades*/
     deep===1 ? info = '<b>Level: </b>Leicht' : (deep===3 ? info = '<b>Level: </b>Mittel' : info = '<b>Level: </b>Schwer');
     instruction.innerHTML = info;
+    reloadLink.style.display = 'block';
 }

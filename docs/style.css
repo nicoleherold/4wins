@@ -37,7 +37,20 @@
     font-weight: 200;
 }
 
+.reload {
+    font-size: 18px; 
+    font-family: 'Roboto Slab', serif;
+    font-weight: 200;
+    /* align-self: start; */
+    display: none;
+}
 
+.reload a {
+    color: #121212;
+    text-decoration: none;
+    padding-bottom: 100px;
+    
+}
 
 
 #selectButtonEasy, #selectButtonMiddle, #selectButtonHard {
